@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Json_WatchApp_WatchKit" customModuleProvider="target">
+                    <items>
+                        <label width="136" height="31" alignment="left" text="Car Track App" textAlignment="center" id="FmE-Du-kgy"/>
+                        <button width="1" alignment="left" title="Get Details" id="P7W-we-pF2">
+                            <connections>
+                                <segue destination="jTq-e9-bo9" kind="modal" id="B50-o1-8gV"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="44" y="124"/>
+        </scene>
+        <!--Car Interface Controller-->
+        <scene sceneID="hlw-Qj-sg3">
+            <objects>
+                <controller id="jTq-e9-bo9" customClass="CarInterfaceController" customModule="Json_WatchApp_WatchKit_Extension">
+                    <items>
+                        <label width="136" alignment="left" text="Car" textAlignment="center" id="pwq-qi-6ey">
+                            <color key="textColor" red="1" green="0.1164199137" blue="0.3522619152" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <table alignment="left" id="OIo-3G-6xF">
+                            <items>
+                                <tableRow identifier="CarRowController" id="eli-TI-h5c" customClass="CarRowController" customModule="Json_WatchApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="79" alignment="left" layout="vertical" id="eKy-QV-faQ">
+                                        <items>
+                                            <group width="1" alignment="left" id="1qn-Ml-iMB">
+                                                <items>
+                                                    <label alignment="left" text="Model" id="ppZ-8M-LFz">
+                                                        <color key="textColor" red="0.66666668650000005" green="0.041365862580000003" blue="0.28148082829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <label width="72" alignment="left" text="Make" id="amf-dz-WBF"/>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="JNb-ZG-5Fk">
+                                                <items>
+                                                    <label alignment="left" text="Color" id="Psp-GI-agX"/>
+                                                    <label alignment="left" text="Year" id="7u5-9e-5Ou"/>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="rg6-aI-Vm5">
+                                                <items>
+                                                    <label alignment="left" text="NOU" id="Aoa-XO-0s9"/>
+                                                    <label alignment="left" text="Price" id="XEZ-WA-7lj">
+                                                        <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="lblColor" destination="Psp-GI-agX" id="0ne-GE-gwi"/>
+                                        <outlet property="lblMake" destination="amf-dz-WBF" id="Zcy-rg-CT4"/>
+                                        <outlet property="lblModel" destination="ppZ-8M-LFz" id="GJ7-HL-qai"/>
+                                        <outlet property="lblNewOrUsed" destination="Aoa-XO-0s9" id="15v-hn-AG8"/>
+                                        <outlet property="lblPrice" destination="XEZ-WA-7lj" id="BUj-H9-8BR"/>
+                                        <outlet property="lblYear" destination="7u5-9e-5Ou" id="fGq-W0-MAK"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="carTable" destination="OIo-3G-6xF" id="zCG-n8-iX7"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="288" y="124"/>
+        </scene>
+    </scenes>
+</document>
